@@ -1,0 +1,14 @@
+#include <stdio.h>
+int main() {
+    int original[] = {10, 20, 30, 40, 50};
+    int size = sizeof(original) / sizeof(original[0]);
+    int copy[size]; 
+    for (int i = 0; i < size; i++) {
+        copy[i] = original[i];
+    }
+    printf("Copied array: ");
+    for (int i = 0; i < size; i++) {
+        printf("%d ", copy[i]);
+    }
+    return 0;
+}
