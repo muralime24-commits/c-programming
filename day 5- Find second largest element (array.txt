@@ -1,0 +1,25 @@
+#include <stdio.h>
+int main() {
+    int arr[] = {12, 45, 7, 89, 23, 89}; 
+    int size = sizeof(arr) / sizeof(arr[0]);
+    int first, second;
+    if (size < 2) {
+        printf("Array must have at least two elements.\n");
+        return 0;
+    }
+    first = second = arr[0];
+    for (int i = 1; i < size; i++) {
+        if (arr[i] > first) {
+            second = first;
+            first = arr[i];
+        } else if (arr[i] > second && arr[i] != first) {
+            second = arr[i];
+        }
+    }
+    if (first == second)
+        printf("No distinct second largest element found.\n");
+    else
+        printf("Second largest element is: %d\n", second);
+
+    return 0;
+}
